@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Разметка диска — Системное ПО</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+<label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+<nav class="sidebar">
+  <label for="sidebar-toggle" class="sidebar__close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </label>
+  <div class="sidebar__logo">Операционные системы</div>
+  <div class="sidebar__subtitle">Курсовая работа</div>
+  <ul class="sidebar__nav">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="os.html">Операционная система</a></li>
+    <li><a href="disk.html" class="active">Разметка диска</a></li>
+    <li><a href="topic1.html">Защита информации</a></li>
+    <li><a href="topic2.html">Диагностика и мониторинг</a></li>
+  </ul>
+</nav>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <label for="sidebar-toggle" class="topbar__menu-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+    <span class="topbar__title">Разметка диска</span>
+  </div>
+</header>
+
+<main class="main">
+  <div class="hero">
+    <h1 class="hero__title">Разметка диска</h1>
+    <p class="hero__subtitle">Описание разметки при установке <em>Arch Linux</em></p>
+  </div>
+
+  <div class="content-block">
+    <img src="img/placeholder.png" alt="скриншот разметки" class="placeholder-img">
+    <h3>Схема разметки</h3>
+    <table class="disk-table">
+      <thead>
+        <tr>
+          <th>Раздел</th>
+          <th>Точка монтирования</th>
+          <th>Файловая система</th>
+          <th>Размер</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>/dev/sda1</td>
+          <td>/boot/efi</td>
+          <td>FAT32</td>
+          <td>512 МБ</td>
+        </tr>
+        <tr>
+          <td>/dev/sda2</td>
+          <td>/</td>
+          <td>ext4</td>
+          <td>50 ГБ</td>
+        </tr>
+        <tr>
+          <td>/dev/sda3</td>
+          <td>/home</td>
+          <td>ext4</td>
+          <td>остальное</td>
+        </tr>
+        <tr>
+          <td>/dev/sda4</td>
+          <td>swap</td>
+          <td>swap</td>
+          <td>8 ГБ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content-block">
+    <h3>Описание схемы разметки</h3>
+    <p>При установке Arch Linux используется ручная разметка диска, что является стандартным подходом для этого дистрибутива. В отличие от Ubuntu или Fedora, Arch Linux не имеет графического установщика с автоматической разметкой — всё выполняется вручную через утилиты <code>fdisk</code>, <code>cfdisk</code> или <code>parted</code>.</p>
+    <p>Выбрана схема разметки с таблицей разделов <strong>GPT</strong> (GUID Partition Table), что является современным стандартом, пришедшим на смену устаревшей MBR. GPT поддерживает диски объёмом более 2 ТБ и позволяет создавать до 128 разделов.</p>
+  </div>
+
+  <div class="content-block">
+    <h3>Обоснование выбора разделов</h3>
+    <p><strong>/dev/sda1 — EFI System Partition (512 МБ, FAT32)</strong><br>
+    Раздел EFI необходим для загрузки системы в режиме UEFI. Файловая система FAT32 является обязательным требованием спецификации UEFI. Размер 512 МБ достаточен для хранения загрузчиков нескольких операционных систем.</p>
+    <p><strong>/dev/sda2 — корневой раздел / (50 ГБ, ext4)</strong><br>
+    Корневой раздел содержит саму операционную систему, установленные программы и системные файлы. Файловая система ext4 выбрана как наиболее стабильная и проверенная для Linux. Объём 50 ГБ обеспечивает достаточное пространство для базовой системы и установленного ПО.</p>
+    <p><strong>/dev/sda3 — домашний раздел /home (остальное, ext4)</strong><br>
+    Выделение домашнего каталога на отдельный раздел позволяет переустанавливать систему без потери пользовательских данных. Сюда сохраняются документы, конфигурационные файлы, загрузки и прочие файлы пользователя.</p>
+    <p><strong>/dev/sda4 — раздел подкачки swap (8 ГБ)</strong><br>
+    Swap-раздел используется системой как дополнительная виртуальная память при нехватке оперативной. Размер 8 ГБ соответствует рекомендациям для систем с аналогичным объёмом ОЗУ и позволяет использовать функцию гибернации (suspend-to-disk).</p>
+  </div>
+
+  <div class="content-block">
+    <h3>Команды разметки</h3>
+    <p>Разметка диска при установке Arch Linux выполняется следующими командами:</p>
+    <pre><code>fdisk /dev/sda        # запуск утилиты разметки
+g                     # создание новой GPT-таблицы
+n → +512M             # создание EFI-раздела
+t → 1 (EFI System)   # установка типа раздела
+n → +50G              # создание корневого раздела
+n → +8G               # создание swap-раздела
+n → (остальное)       # создание домашнего раздела
+w                     # запись изменений
+
+mkfs.fat -F32 /dev/sda1    # форматирование EFI
+mkfs.ext4 /dev/sda2        # форматирование корня
+mkfs.ext4 /dev/sda3        # форматирование /home
+mkswap /dev/sda4            # создание swap
+swapon /dev/sda4            # активация swap</code></pre>
+  </div>
+</main>
+
+</body>
+</html>

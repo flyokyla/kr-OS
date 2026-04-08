@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Диагностика и мониторинг — Системное ПО</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+<label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+<nav class="sidebar">
+  <label for="sidebar-toggle" class="sidebar__close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </label>
+  <div class="sidebar__logo">Операционные системы</div>
+  <div class="sidebar__subtitle">Курсовая работа</div>
+  <ul class="sidebar__nav">
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="os.html">Операционная система</a></li>
+    <li><a href="disk.html">Разметка диска</a></li>
+    <li><a href="topic1.html">Защита информации</a></li>
+    <li><a href="topic2.html" class="active">Диагностика и мониторинг</a></li>
+  </ul>
+</nav>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <label for="sidebar-toggle" class="topbar__menu-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+    <span class="topbar__title">Диагностика и мониторинг</span>
+  </div>
+</header>
+
+<main class="main">
+  <div class="hero">
+    <h1 class="hero__title">Средства диагностики, контроля и мониторинга</h1>
+    <p class="hero__subtitle">Обзор инструментов мониторинга системы в <em>Arch Linux</em></p>
+  </div>
+
+  <div class="page-with-sidenav">
+  <nav class="local-nav local-nav--side">
+    <a href="#polybar" class="active">polybar</a>
+    <a href="#htop">htop</a>
+    <a href="#glances">Glances</a>
+    <a href="#conclusion">Вывод</a>
+  </nav>
+
+  <div class="page-content">
+  <section id="polybar" class="section">
+    <h2 class="section__title">polybar</h2>
+    <p class="section__desc">Быстрая и легко настраиваемая панель статуса для оконных менеджеров. Отображает информацию о системе в компактной строке на краю экрана.</p>
+
+    <div class="content-block">
+      <div class="two-col">
+        <img src="img/placeholder.png" alt="скриншот polybar с датой и временем" class="placeholder-img">
+        <div>
+          <div class="info-row">
+            <span class="info-row__label">Производитель</span>
+            <span class="info-row__value">Сообщество polybar (Michael Carlberg и др.)</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__label">Сайт</span>
+            <span class="info-row__value"><a href="https://polybar.github.io/" target="_blank">polybar.github.io</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__label">Лицензия</span>
+            <span class="info-row__value">MIT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>Возможности и особенности</h3>
+      <p>Polybar — инструмент для создания статусных панелей, особенно востребованный в оконных менеджерах с ограниченной или отсутствующей встроенной панелью, таких как i3wm, bspwm и awesome. Программа написана на C++ и ориентирована на простоту конфигурации без необходимости писать shell-скрипты.</p>
+      <ul>
+        <li>Встроенные модули для отображения: рабочих пространств i3/bspwm, даты и времени, уровня громкости (PulseAudio/ALSA), яркости экрана, заряда батареи, сетевого подключения, температуры CPU и загрузки ОЗУ</li>
+        <li>Поддержка пользовательских скриптов — можно выводить любую информацию через модуль <code>custom/script</code></li>
+        <li>Полная настройка внешнего вида: шрифты, цвета, отступы, разделители, прозрачность</li>
+        <li>Поддержка нескольких мониторов с возможностью размещения разных панелей на каждом</li>
+        <li>Кликабельные элементы — модули могут реагировать на нажатия мышью и запускать команды</li>
+        <li>Системный трей (system tray) для отображения иконок приложений</li>
+        <li>IPC-интерфейс для управления панелью из внешних скриптов</li>
+      </ul>
+      <p>Конфигурация производится через INI-файл <code>~/.config/polybar/config.ini</code>, что делает настройку интуитивно понятной даже без глубоких технических знаний.</p>
+    </div>
+
+    <div class="content-block">
+      <h3>Эксперименты</h3>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 1</div>
+        <div class="experiment__title">Запуск polybar с конфигурацией по умолчанию</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> установить polybar и запустить панель с примером конфигурации.</p>
+          <p><strong>Шаг 1.</strong> Устанавливаем polybar из официального репозитория:</p>
+          <pre><code>sudo pacman -S polybar</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 1 — установка polybar" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Копируем пример конфигурации в пользовательскую директорию:</p>
+          <pre><code>mkdir -p ~/.config/polybar
+cp /usr/share/doc/polybar/examples/config.ini ~/.config/polybar/config.ini</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 2 — копирование конфигурации" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Запускаем polybar с именем панели из примера:</p>
+          <pre><code>polybar example</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 3 — запуск polybar" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> В верхней части экрана появилась панель с базовыми модулями: рабочие пространства i3, дата и время, громкость:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — панель polybar на экране" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 2</div>
+        <div class="experiment__title">Настройка модуля рабочих пространств i3</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> настроить отображение рабочих пространств i3 с визуальным выделением активного.</p>
+          <p><strong>Шаг 1.</strong> Открываем конфигурацию <code>~/.config/polybar/config.ini</code> и добавляем секцию модуля i3:</p>
+          <pre><code>[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+label-focused = %name%
+label-focused-background = #5294e2
+label-focused-padding = 2
+label-unfocused = %name%
+label-unfocused-padding = 2
+label-urgent-background = #bf616a
+label-urgent-padding = 2</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 1 — редактирование конфигурации модуля i3" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Перезапускаем polybar. Рабочие пространства отображаются кнопками, активное выделено синим фоном:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — рабочие пространства в polybar" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Переключаемся на другое рабочее пространство — подсветка перемещается на новый элемент:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — переключение рабочего пространства" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Вызываем urgent-уведомление на другом пространстве — оно подсвечивается красным (#bf616a):</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — urgent-уведомление на рабочем пространстве" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 3</div>
+        <div class="experiment__title">Добавление модулей мониторинга CPU и RAM</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> добавить в панель модули отображения загрузки CPU и использования ОЗУ.</p>
+          <p><strong>Шаг 1.</strong> Добавляем в конфигурацию секции модулей cpu и memory:</p>
+          <pre><code>[module/cpu]
+type = internal/cpu
+interval = 2
+label = CPU: %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 3
+label = RAM: %percentage_used%%</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 1 — конфигурация модулей cpu и memory" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Подключаем модули к панели: <code>modules-right = cpu memory date</code>. Перезапускаем polybar:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — модули CPU и RAM в панели" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Запускаем ресурсоёмкое приложение — значения CPU и RAM в панели увеличиваются в реальном времени:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — рост показателей при нагрузке" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Закрываем приложение — значения возвращаются в норму:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — нормальные показатели после закрытия" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 4</div>
+        <div class="experiment__title">Создание пользовательского модуля скрипта</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> создать модуль, отображающий количество доступных обновлений пакетов Arch Linux.</p>
+          <p><strong>Шаг 1.</strong> Создаём скрипт <code>~/.config/polybar/scripts/updates.sh</code>:</p>
+          <pre><code>#!/bin/bash
+updates=$(checkupdates 2>/dev/null | wc -l)
+if [ "$updates" -gt 0 ]; then
+    echo "$updates обн."
+else
+    echo "Актуально"
+fi</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 1 — создание скрипта updates.sh" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Делаем скрипт исполняемым: <code>chmod +x ~/.config/polybar/scripts/updates.sh</code>. Проверяем вывод вручную:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — тестовый запуск скрипта" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Добавляем модуль в конфигурацию polybar:</p>
+          <pre><code>[module/updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates.sh
+interval = 600</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 3 — конфигурация модуля updates" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Перезапускаем polybar — в панели появился модуль с количеством обновлений:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — модуль обновлений в панели" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 5</div>
+        <div class="experiment__title">Настройка внешнего вида панели</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> изменить внешний вид панели — цвета, шрифты, высоту и прозрачность.</p>
+          <p><strong>Шаг 1.</strong> Редактируем секцию <code>[bar/mybar]</code> — задаём полупрозрачный фон и шрифты:</p>
+          <pre><code>[bar/mybar]
+height = 32
+background = #cc2e3440
+foreground = #d8dee9
+font-0 = "JetBrains Mono:size=10;3"
+font-1 = "Font Awesome 6 Free:style=Solid:size=10;3"
+padding-left = 2
+padding-right = 2
+module-margin = 1
+border-bottom-size = 2
+border-bottom-color = #5294e2</code></pre>
+          <img src="img/placeholder.png" alt="Шаг 1 — редактирование параметров панели" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Устанавливаем шрифт JetBrains Mono и Font Awesome: <code>sudo pacman -S ttf-jetbrains-mono ttf-font-awesome</code>:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — установка шрифтов" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Перезапускаем polybar — панель отображается с новым стилем: тёмный полупрозрачный фон (Nord), синяя нижняя полоска:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — обновлённый внешний вид панели" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Иконки Font Awesome корректно отображаются рядом с текстовыми метками модулей:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — иконки и текст в панели" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>Вывод</h3>
+      <p>Polybar — незаменимый инструмент для создания информативной и красивой панели статуса в тайловых оконных менеджерах. Благодаря модульной архитектуре и простому формату конфигурации, панель легко адаптируется под любые потребности пользователя.</p>
+      <div class="pros-cons">
+        <div class="pros-cons__col pros-cons__col--plus">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Высокая производительность благодаря реализации на C++</li>
+            <li>Богатый набор встроенных модулей</li>
+            <li>Простой INI-формат конфигурации</li>
+            <li>Активное сообщество с множеством готовых тем</li>
+          </ul>
+        </div>
+        <div class="pros-cons__col pros-cons__col--minus">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Работает только с X11, нет поддержки Wayland</li>
+            <li>Требует ручной настройки — нет GUI-конфигуратора</li>
+            <li>Некоторые модули могут потребовать дополнительных зависимостей</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="htop" class="section">
+    <h2 class="section__title">htop</h2>
+    <p class="section__desc">Кросс-платформенный интерактивный просмотрщик процессов — улучшенная альтернатива стандартной утилите <code>top</code>.</p>
+
+    <div class="content-block">
+      <img src="img/placeholder.png" alt="скриншот htop с датой и временем" class="placeholder-img">
+      <div class="info-row">
+        <span class="info-row__label">Производитель</span>
+        <span class="info-row__value">Hisham Muhammad (автор), сообщество htop-dev</span>
+      </div>
+      <div class="info-row">
+        <span class="info-row__label">Сайт</span>
+        <span class="info-row__value"><a href="https://htop.dev/" target="_blank">htop.dev</a></span>
+      </div>
+      <div class="info-row">
+        <span class="info-row__label">Версия</span>
+        <span class="info-row__value">3.4.1</span>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="content-block">
+        <h3>Возможности</h3>
+        <p>htop — интерактивный просмотрщик процессов, разработанный Hisham Muhammad в 2004 году. С 2020 года проект поддерживается командой разработчиков на <a href="https://github.com/htop-dev/htop" target="_blank">GitHub</a>. В отличие от стандартного <code>top</code>, htop предоставляет полноцветный интерфейс с поддержкой мыши и горизонтальной/вертикальной прокрутки.</p>
+        <ul>
+          <li>Отображение всех процессов в виде дерева или плоского списка</li>
+          <li>Цветовые индикаторы загрузки CPU, оперативной памяти и swap</li>
+          <li>Сортировка процессов по CPU, памяти, приоритету, времени работы и другим параметрам</li>
+          <li>Поиск и фильтрация процессов в реальном времени</li>
+          <li>Отправка сигналов процессам (kill, stop, continue) прямо из интерфейса</li>
+        </ul>
+      </div>
+      <div class="content-block">
+        <h3>Особенности</h3>
+        <p>htop отличается от стандартного <code>top</code> наличием полноценного TUI (Text User Interface), что делает работу с процессами интуитивной и быстрой.</p>
+        <ul>
+          <li>Поддержка мыши — можно кликать по заголовкам столбцов для сортировки</li>
+          <li>Настраиваемые метрики в верхней части экрана (meters)</li>
+          <li>Древовидное отображение процессов с визуализацией иерархии родитель-потомок</li>
+          <li>Кросс-платформенность — работает на Linux, FreeBSD, macOS и других Unix-системах</li>
+          <li>Изменение приоритета (nice) процессов без выхода из программы</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>Эксперименты</h3>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 1</div>
+        <div class="experiment__title">Просмотр процессов в древовидном режиме</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> отобразить список процессов в виде дерева для визуализации иерархии родитель-потомок.</p>
+          <p><strong>Шаг 1.</strong> Запускаем htop в терминале командой <code>htop</code>. Отображается плоский список процессов:</p>
+          <img src="img/placeholder.png" alt="Шаг 1 — запуск htop в обычном режиме" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Нажимаем клавишу <kbd>F5</kbd> (Tree) для переключения в древовидный режим:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — переключение в древовидный режим" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Процессы отображаются иерархически: systemd (PID 1) — корневой, от него порождены сервисы (NetworkManager, sshd и др.):</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — иерархия системных процессов" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Видна цепочка пользовательской сессии: login → i3 → терминал → htop:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — цепочка пользовательских процессов" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 2</div>
+        <div class="experiment__title">Сортировка процессов по потреблению CPU</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> определить процессы с наибольшим потреблением ресурсов процессора.</p>
+          <p><strong>Шаг 1.</strong> В htop нажимаем клавишу <kbd>P</kbd> для сортировки по столбцу CPU%:</p>
+          <img src="img/placeholder.png" alt="Шаг 1 — сортировка по CPU" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> В отдельном терминале запускаем стресс-тест: <code>stress --cpu 2 --timeout 30</code>:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — запуск stress-теста" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> В htop процессы stress занимают верхние строки (~100% на ядро), индикаторы CPU заполнены красным и зелёным:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — процессы stress в топе по CPU" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> После завершения stress (30 секунд) нагрузка возвращается в норму, индикаторы CPU опустели:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — нормальная нагрузка после stress" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 3</div>
+        <div class="experiment__title">Фильтрация процессов по имени</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> найти все процессы конкретного приложения с помощью фильтра.</p>
+          <p><strong>Шаг 1.</strong> Нажимаем <kbd>F4</kbd> (Filter) — в нижней части htop появляется строка ввода фильтра:</p>
+          <img src="img/placeholder.png" alt="Шаг 1 — строка фильтра в htop" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Вводим «firefox» — в списке остаются только процессы Firefox и его дочерние потоки (Web Content, GPU Process):</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — отфильтрованные процессы Firefox" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Очищаем фильтр (F4 → Esc). Нажимаем <kbd>F3</kbd> (Search) и вводим «polybar» — первое совпадение подсвечено:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — поиск процесса polybar" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Нажимаем F3 повторно для перехода к следующему совпадению:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — навигация по результатам поиска" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 4</div>
+        <div class="experiment__title">Завершение зависшего процесса</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> принудительно завершить процесс через интерфейс htop.</p>
+          <p><strong>Шаг 1.</strong> В отдельном терминале запускаем фоновый процесс: <code>sleep 9999</code>:</p>
+          <img src="img/placeholder.png" alt="Шаг 1 — запуск sleep 9999" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> В htop находим процесс sleep через фильтр (F4), выделяем его курсором:</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — процесс sleep в htop" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Нажимаем <kbd>F9</kbd> (Kill) — открывается список сигналов. Выбираем SIGTERM (15) и подтверждаем:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — выбор сигнала SIGTERM" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Процесс sleep завершён и исчез из списка. В терминале отображается «Terminated»:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — процесс завершён" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 5</div>
+        <div class="experiment__title">Настройка метрик в заголовке</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> настроить отображение метрик (meters) в верхней части htop.</p>
+          <p><strong>Шаг 1.</strong> Нажимаем <kbd>F2</kbd> (Setup) — открывается меню настроек. Выбираем раздел «Meters»:</p>
+          <img src="img/placeholder.png" alt="Шаг 1 — меню настроек htop" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> В левую колонку добавляем индикаторы каждого ядра CPU, Memory, Swap. Меняем стиль CPU на Bar (графический):</p>
+          <img src="img/placeholder.png" alt="Шаг 2 — настройка левой колонки метрик" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> В правую колонку добавляем: Tasks, Load average, Uptime, Battery:</p>
+          <img src="img/placeholder.png" alt="Шаг 3 — настройка правой колонки метрик" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Выходим из настроек (F10). Верхняя часть htop перестроена — цветные полоски CPU, индикаторы RAM/swap, время работы системы:</p>
+          <img src="img/placeholder.png" alt="Шаг 4 — обновлённые метрики htop" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>Вывод</h3>
+      <p>htop — один из самых популярных инструментов мониторинга процессов в Linux. Благодаря цветному интерфейсу, поддержке мыши и интуитивному управлению, htop значительно упрощает диагностику загрузки системы и управление процессами.</p>
+      <div class="pros-cons">
+        <div class="pros-cons__col pros-cons__col--plus">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Наглядный цветной интерфейс с индикаторами загрузки</li>
+            <li>Поддержка мыши и клавиатурного управления</li>
+            <li>Древовидное отображение процессов</li>
+            <li>Кросс-платформенность</li>
+            <li>Минимальное потребление ресурсов</li>
+          </ul>
+        </div>
+        <div class="pros-cons__col pros-cons__col--minus">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Работает только в терминале, нет графического интерфейса</li>
+            <li>Не сохраняет историю метрик для последующего анализа</li>
+            <li>Ограниченные возможности мониторинга сети и дисков</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="glances" class="section">
+    <h2 class="section__title">Glances</h2>
+    <p class="section__desc">Кросс-платформенный инструмент комплексного мониторинга системы, написанный на Python. Альтернатива top/htop с расширенным набором метрик.</p>
+
+    <div class="content-block">
+      <div class="two-col">
+        <div>
+          <h3>О программе</h3>
+          <div class="info-row">
+            <span class="info-row__label">Производитель</span>
+            <span class="info-row__value">Nicolas Hennion (nicolargo)</span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__label">Сайт</span>
+            <span class="info-row__value"><a href="https://nicolargo.github.io/glances/" target="_blank">nicolargo.github.io/glances</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-row__label">Версия</span>
+            <span class="info-row__value">4.5.2</span>
+          </div>
+        </div>
+        <img src="img/placeholder.png" alt="скриншот Glances с датой и временем" class="placeholder-img">
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>Возможности</h3>
+      <p>Glances — инструмент мониторинга системы, разработанный Nicolas Hennion и написанный на Python. В отличие от htop, который фокусируется на процессах, Glances предоставляет комплексный обзор всех аспектов работы системы на одном экране.</p>
+      <ul>
+        <li>Мониторинг CPU, оперативной памяти, swap, дискового пространства и сетевых интерфейсов</li>
+        <li>Отображение процессов с сортировкой по автоматически определяемому «узкому месту»</li>
+        <li>Мониторинг температуры датчиков, скорости вентиляторов и напряжения</li>
+        <li>Отслеживание ввода-вывода дисков и сетевого трафика в реальном времени</li>
+        <li>Поддержка мониторинга Docker-контейнеров</li>
+        <li>Встроенный веб-интерфейс для удалённого мониторинга через браузер</li>
+        <li>REST API для интеграции с другими системами</li>
+        <li>Экспорт данных в CSV, InfluxDB, Elasticsearch, Prometheus и другие хранилища</li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <h3>Особенности</h3>
+      <p>Glances выделяется среди инструментов мониторинга своей универсальностью и множеством режимов работы:</p>
+      <ul>
+        <li><strong>Standalone-режим</strong> — классическое отображение в терминале</li>
+        <li><strong>Веб-режим</strong> — запуск через <code>glances -w</code> открывает веб-интерфейс на порту 61208</li>
+        <li><strong>Клиент-серверный режим</strong> — мониторинг удалённых машин через сеть</li>
+        <li>Цветовая индикация: зелёный (OK), синий (осторожно), фиолетовый (предупреждение), красный (критическое)</li>
+        <li>Кросс-платформенность: Linux, macOS, FreeBSD, Windows</li>
+        <li>Установка одной командой: <code>pip install glances</code> или <code>sudo pacman -S glances</code></li>
+      </ul>
+    </div>
+
+    <div class="content-block">
+      <h3>Эксперименты</h3>
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 1</div>
+        <div class="experiment__title">Запуск Glances в режиме терминала</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> запустить Glances и изучить основной интерфейс мониторинга в терминале.</p>
+          <p><strong>Действия:</strong> установлен Glances: <code>sudo pacman -S glances</code>. Запущен командой <code>glances</code>. Изучены доступные секции интерфейса и горячие клавиши (вызываются по <kbd>h</kbd>).</p>
+          <p><strong>Результат:</strong> на одном экране терминала отображается комплексная информация: загрузка CPU по ядрам, использование RAM и swap, список процессов (отсортированных по автоматически определяемому «узкому месту»), дисковый ввод-вывод, сетевой трафик по интерфейсам, температура датчиков. Цветовая индикация работает: зелёные значения — норма, фиолетовые — предупреждение, красные — критические.</p>
+          <img src="img/placeholder.png" alt="скриншот Glances в терминале" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 2</div>
+        <div class="experiment__title">Запуск веб-интерфейса мониторинга</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> запустить Glances в режиме веб-сервера для удалённого мониторинга через браузер.</p>
+          <p><strong>Действия:</strong> установлен дополнительный модуль: <code>pip install glances[web]</code>. Запущен веб-режим: <code>glances -w</code>. В браузере открыт адрес <code>http://localhost:61208</code>.</p>
+          <p><strong>Результат:</strong> в браузере отобразился полноценный дашборд мониторинга с теми же данными, что и в терминальной версии. Веб-интерфейс обновляется автоматически каждые несколько секунд. Интерфейс адаптивный — корректно отображается на мобильных устройствах. Доступ по сети: с другого компьютера по адресу <code>http://192.168.1.100:61208</code> дашборд также доступен.</p>
+          <img src="img/placeholder.png" alt="скриншот веб-интерфейса Glances" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 3</div>
+        <div class="experiment__title">Мониторинг дискового ввода-вывода</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> отследить нагрузку на дисковую подсистему при копировании большого файла.</p>
+          <p><strong>Действия:</strong> запущен Glances. В отдельном терминале запущено копирование большого файла: <code>dd if=/dev/zero of=~/testfile bs=1M count=1024</code> (создание файла размером 1 ГБ). В Glances нажата клавиша <kbd>d</kbd> для включения секции Disk I/O.</p>
+          <p><strong>Результат:</strong> в секции «DISK I/O» отобразился резкий рост скорости записи на устройство <code>sda</code>: ~350 МБ/с при записи. Значение подсвечено фиолетовым (предупреждение о высокой нагрузке). После завершения dd скорость записи вернулась к нулю. Чтение оставалось минимальным на протяжении всего эксперимента. Glances также показал процесс <code>dd</code> в топе по дисковому вводу-выводу.</p>
+          <img src="img/placeholder.png" alt="скриншот мониторинга диска в Glances" class="placeholder-img placeholder-img--sm">
+        </div>
+      </div>
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 4</div>
+        <div class="experiment__title">Мониторинг сетевого трафика</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> отследить сетевой трафик при загрузке файла из интернета.</p>
+          <p><strong>Действия:</strong> в Glances нажата клавиша <kbd>n</kbd> для отображения секции Network. В отдельном терминале запущена загрузка: <code>curl -O https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso</code>.</p>
+          <p><strong>Результат:</strong> в секции «NETWORK» для интерфейса <code>wlan0</code> отобразился входящий трафик ~12 МБ/с (Rx), исходящий — минимальный (Tx). Значения обновляются в реальном времени. При паузе загрузки трафик падает до нуля, при возобновлении — снова растёт. Glances корректно различает трафик по разным сетевым интерфейсам (wlan0, lo).</p>
+        </div>
+      </div>
+      <div class="experiment">
+        <div class="experiment__num">Эксперимент 5</div>
+        <div class="experiment__title">Экспорт данных мониторинга в CSV</div>
+        <div class="experiment__body">
+          <p><strong>Задача:</strong> сохранить данные мониторинга в CSV-файл для последующего анализа.</p>
+          <p><strong>Действия:</strong> Glances запущен с параметром экспорта: <code>glances --export csv --export-csv-file /tmp/glances_report.csv</code>. Программа работала в течение 5 минут, собирая данные каждые 3 секунды.</p>
+          <p><strong>Результат:</strong> после остановки Glances (Ctrl+C) создан файл <code>/tmp/glances_report.csv</code> размером около 800 КБ. Файл содержит столбцы: timestamp, cpu_percent, mem_percent, swap_percent, disk_read, disk_write, net_rx, net_tx и другие метрики. Данные можно импортировать в Excel или обработать скриптом на Python для построения графиков нагрузки за период наблюдения.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>Вывод</h3>
+      <p>Glances — мощный и универсальный инструмент мониторинга, который предоставляет максимально полную картину состояния системы. Благодаря веб-интерфейсу и REST API, Glances подходит как для локального, так и для удалённого мониторинга серверов и рабочих станций.</p>
+      <div class="pros-cons">
+        <div class="pros-cons__col pros-cons__col--plus">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Комплексный мониторинг всех подсистем на одном экране</li>
+            <li>Встроенный веб-интерфейс и REST API</li>
+            <li>Экспорт данных в различные системы хранения</li>
+            <li>Мониторинг Docker-контейнеров</li>
+            <li>Кросс-платформенность</li>
+          </ul>
+        </div>
+        <div class="pros-cons__col pros-cons__col--minus">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Более высокое потребление ресурсов из-за Python</li>
+            <li>Требует установки дополнительных зависимостей для некоторых функций</li>
+            <li>Менее детальная информация по процессам по сравнению с htop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conclusion">
+    <div class="conclusion-block">
+      <h3>Общий вывод по разделу</h3>
+      <p>Рассмотренные инструменты дополняют друг друга и решают разные задачи мониторинга в Arch Linux:</p>
+      <ul>
+        <li><strong>polybar</strong> — постоянная панель статуса, отображающая ключевые метрики системы в реальном времени прямо на рабочем столе;</li>
+        <li><strong>htop</strong> — детальный анализ процессов с возможностью управления ими (завершение, изменение приоритета);</li>
+        <li><strong>Glances</strong> — комплексный мониторинг всех подсистем с возможностью удалённого доступа через веб-интерфейс.</li>
+      </ul>
+      <p>Для повседневного использования рекомендуется связка polybar (для постоянного отображения базовых метрик) + htop (для диагностики проблем с процессами). Glances целесообразно использовать для глубокого анализа нагрузки на систему, а также для удалённого мониторинга серверов благодаря встроенному веб-серверу.</p>
+    </div>
+  </section>
+  </div>
+  </div>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var nav = document.querySelector(".local-nav--side");
+  var links = nav.querySelectorAll("a");
+  var sections = [];
+  links.forEach(function (link) {
+    var id = link.getAttribute("href").replace("#", "");
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: link });
+  });
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function (l) { l.classList.remove("active"); });
+        sections.forEach(function (s) {
+          if (s.id === entry.target.id) s.link.classList.add("active");
+        });
+      }
+    });
+  }, { rootMargin: "-20% 0px -60% 0px" });
+  sections.forEach(function (s) { observer.observe(s.el); });
+});
+</script>
+</body>
+</html>

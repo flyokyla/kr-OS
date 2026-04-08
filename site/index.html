@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — Системное ПО</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+<label for="sidebar-toggle" class="sidebar-overlay"></label>
+
+<nav class="sidebar">
+  <label for="sidebar-toggle" class="sidebar__close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </label>
+  <div class="sidebar__logo">Операционные системы</div>
+  <div class="sidebar__subtitle">Курсовая работа</div>
+  <ul class="sidebar__nav">
+    <li><a href="index.html" class="active">Главная</a></li>
+    <li><a href="os.html">Операционная система</a></li>
+    <li><a href="disk.html">Разметка диска</a></li>
+    <li><a href="topic1.html">Защита информации</a></li>
+    <li><a href="topic2.html">Диагностика и мониторинг</a></li>
+  </ul>
+</nav>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <label for="sidebar-toggle" class="topbar__menu-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+    <span class="topbar__title">Системное программное обеспечение</span>
+  </div>
+</header>
+
+<main class="main">
+  <div class="hero">
+    <h1 class="hero__title">Разделы системного программного обеспечения</h1>
+    <p class="hero__subtitle">Курсовая работа по дисциплине <em>«Системное администрирование»</em></p>
+  </div>
+
+  <div class="profile">
+    <div class="profile__photo"><img src="static/img/my_photo.jpg" alt="фото"></div>
+    <div class="profile__info">
+      <h2>Капытин Андрей Игоревич ИЦТМС 3-4</h2>
+      <p>Тема курсовой работы: «Разработка Web-страницы с описанием разделов системного программного обеспечения».<br> Преподаватель: Иванов Н.А.</p>
+    </div>
+  </div>
+
+  <div class="section-grid">
+    <div class="card card--blue">
+      <div class="card__icon"><img src="static/img/Arch.png" alt="Arch Linux"></div>
+      <a href="os.html" class="card__title">Операционная система</a>
+      <div class="card__desc">
+        <a href="os.html#arch" class="card__btn card__btn--blue">Arch Linux</a>
+        <a href="os.html#i3wm" class="card__btn card__btn--purple">i3wm</a>
+      </div>
+    </div>
+    <div class="card card--green">
+      <div class="card__icon">💾</div>
+      <a href="disk.html" class="card__title">Разметка диска</a>
+      <div class="card__desc">
+        <a href="disk.html" class="card__btn card__btn--green">Схема разделов</a>
+      </div>
+    </div>
+    <div class="card card--yellow">
+      <div class="card__icon">🔒</div>
+      <a href="topic1.html" class="card__title">Защита информации от НСД</a>
+      <div class="card__desc">
+        <a href="topic1.html#i3lock" class="card__btn card__btn--orange">i3lock-color</a>
+        <a href="topic1.html#gufw" class="card__btn card__btn--red">Gufw</a>
+        <a href="topic1.html#clamtk" class="card__btn card__btn--teal">ClamTk</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__icon">📊</div>
+      <a href="topic2.html" class="card__title">Диагностика и мониторинг</a>
+      <div class="card__desc">
+        <a href="topic2.html#polybar" class="card__btn card__btn--purple">polybar</a>
+        <a href="topic2.html#htop" class="card__btn card__btn--pink">htop</a>
+        <a href="topic2.html#glances" class="card__btn card__btn--yellow">Glances</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
