@@ -47,6 +47,7 @@
     <a href="#htop">htop</a>
     <a href="#glances">Glances</a>
     <a href="#conclusion">Вывод</a>
+    <a href="#presentation">Презентация</a>
   </nav>
 
   <div class="page-content">
@@ -56,7 +57,7 @@
 
     <div class="content-block">
       <div class="two-col">
-        <img src="img/placeholder.png" alt="скриншот polybar с датой и временем" class="placeholder-img">
+        <img src="static/img/diagnostic/polybar/main.png" alt="скриншот polybar с датой и временем" class="placeholder-img">
         <div>
           <div class="info-row">
             <span class="info-row__label">Производитель</span>
@@ -99,16 +100,16 @@
           <p><strong>Задача:</strong> установить polybar и запустить панель с примером конфигурации.</p>
           <p><strong>Шаг 1.</strong> Устанавливаем polybar из официального репозитория:</p>
           <pre><code>sudo pacman -S polybar</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — установка polybar" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp1/1.png" alt="Шаг 1 — установка polybar" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Копируем пример конфигурации в пользовательскую директорию:</p>
           <pre><code>mkdir -p ~/.config/polybar
 cp /usr/share/doc/polybar/examples/config.ini ~/.config/polybar/config.ini</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 2 — копирование конфигурации" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp1/2.png" alt="Шаг 2 — копирование конфигурации" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Запускаем polybar с именем панели из примера:</p>
           <pre><code>polybar example</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 3 — запуск polybar" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp1/3.png" alt="Шаг 3 — запуск polybar" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> В верхней части экрана появилась панель с базовыми модулями: рабочие пространства i3, дата и время, громкость:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — панель polybar на экране" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp1/4.png" alt="Шаг 4 — панель polybar на экране" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -129,13 +130,11 @@ label-unfocused = %name%
 label-unfocused-padding = 2
 label-urgent-background = #bf616a
 label-urgent-padding = 2</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — редактирование конфигурации модуля i3" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp2/1.png" alt="Шаг 1 — редактирование конфигурации модуля i3" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Перезапускаем polybar. Рабочие пространства отображаются кнопками, активное выделено синим фоном:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — рабочие пространства в polybar" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp2/2.png" alt="Шаг 2 — рабочие пространства в polybar" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Переключаемся на другое рабочее пространство — подсветка перемещается на новый элемент:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — переключение рабочего пространства" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 4.</strong> Вызываем urgent-уведомление на другом пространстве — оно подсвечивается красным (#bf616a):</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — urgent-уведомление на рабочем пространстве" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp2/3.png" alt="Шаг 3 — переключение рабочего пространства" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -154,13 +153,11 @@ label = CPU: %percentage%%
 type = internal/memory
 interval = 3
 label = RAM: %percentage_used%%</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — конфигурация модулей cpu и memory" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp3/1.png" alt="Шаг 1 — конфигурация модулей cpu и memory" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Подключаем модули к панели: <code>modules-right = cpu memory date</code>. Перезапускаем polybar:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — модули CPU и RAM в панели" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 3.</strong> Запускаем ресурсоёмкое приложение — значения CPU и RAM в панели увеличиваются в реальном времени:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — рост показателей при нагрузке" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 4.</strong> Закрываем приложение — значения возвращаются в норму:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — нормальные показатели после закрытия" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp3/2.png" alt="Шаг 2 — модули CPU и RAM в панели" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Теперь CPU и RAM изменяются в реальном времени:</p>
+          <img src="static/img/diagnostic/polybar/exp3/3.png" alt="Шаг 3 — рост показателей при нагрузке" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -177,17 +174,17 @@ if [ "$updates" -gt 0 ]; then
 else
     echo "Актуально"
 fi</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — создание скрипта updates.sh" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp4/1.png" alt="Шаг 1 — создание скрипта updates.sh" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Делаем скрипт исполняемым: <code>chmod +x ~/.config/polybar/scripts/updates.sh</code>. Проверяем вывод вручную:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — тестовый запуск скрипта" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp4/2.png" alt="Шаг 2 — тестовый запуск скрипта" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Добавляем модуль в конфигурацию polybar:</p>
           <pre><code>[module/updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates.sh
 interval = 600</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 3 — конфигурация модуля updates" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp4/3.png" alt="Шаг 3 — конфигурация модуля updates" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Перезапускаем polybar — в панели появился модуль с количеством обновлений:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — модуль обновлений в панели" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp4/4.png" alt="Шаг 4 — модуль обновлений в панели" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -208,13 +205,11 @@ padding-right = 2
 module-margin = 1
 border-bottom-size = 2
 border-bottom-color = #5294e2</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — редактирование параметров панели" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp5/1.png" alt="Шаг 1 — редактирование параметров панели" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Устанавливаем шрифт JetBrains Mono и Font Awesome: <code>sudo pacman -S ttf-jetbrains-mono ttf-font-awesome</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — установка шрифтов" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp5/2.png" alt="Шаг 2 — установка шрифтов" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Перезапускаем polybar — панель отображается с новым стилем: тёмный полупрозрачный фон (Nord), синяя нижняя полоска:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — обновлённый внешний вид панели" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 4.</strong> Иконки Font Awesome корректно отображаются рядом с текстовыми метками модулей:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — иконки и текст в панели" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/polybar/exp5/3.png" alt="Шаг 3 — обновлённый внешний вид панели" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
     </div>
@@ -249,7 +244,7 @@ border-bottom-color = #5294e2</code></pre>
     <p class="section__desc">Кросс-платформенный интерактивный просмотрщик процессов — улучшенная альтернатива стандартной утилите <code>top</code>.</p>
 
     <div class="content-block">
-      <img src="img/placeholder.png" alt="скриншот htop с датой и временем" class="placeholder-img">
+      <img src="static/img/diagnostic/htop/main.png" alt="скриншот htop с датой и временем" class="placeholder-img">
       <div class="info-row">
         <span class="info-row__label">Производитель</span>
         <span class="info-row__value">Hisham Muhammad (автор), сообщество htop-dev</span>
@@ -298,13 +293,12 @@ border-bottom-color = #5294e2</code></pre>
         <div class="experiment__body">
           <p><strong>Задача:</strong> отобразить список процессов в виде дерева для визуализации иерархии родитель-потомок.</p>
           <p><strong>Шаг 1.</strong> Запускаем htop в терминале командой <code>htop</code>. Отображается плоский список процессов:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — запуск htop в обычном режиме" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp1/1.png" alt="Шаг 1 — запуск htop в обычном режиме" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Нажимаем клавишу <kbd>F5</kbd> (Tree) для переключения в древовидный режим:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — переключение в древовидный режим" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp1/2.png" alt="Шаг 2 — переключение в древовидный режим" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Процессы отображаются иерархически: systemd (PID 1) — корневой, от него порождены сервисы (NetworkManager, sshd и др.):</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — иерархия системных процессов" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Видна цепочка пользовательской сессии: login → i3 → терминал → htop:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — цепочка пользовательских процессов" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp1/4.png" alt="Шаг 4 — цепочка пользовательских процессов" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -314,13 +308,13 @@ border-bottom-color = #5294e2</code></pre>
         <div class="experiment__body">
           <p><strong>Задача:</strong> определить процессы с наибольшим потреблением ресурсов процессора.</p>
           <p><strong>Шаг 1.</strong> В htop нажимаем клавишу <kbd>P</kbd> для сортировки по столбцу CPU%:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — сортировка по CPU" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp2/1.png" alt="Шаг 1 — сортировка по CPU" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> В отдельном терминале запускаем стресс-тест: <code>stress --cpu 2 --timeout 30</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — запуск stress-теста" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp2/2.png" alt="Шаг 2 — запуск stress-теста" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> В htop процессы stress занимают верхние строки (~100% на ядро), индикаторы CPU заполнены красным и зелёным:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — процессы stress в топе по CPU" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp2/3.png" alt="Шаг 3 — процессы stress в топе по CPU" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> После завершения stress (30 секунд) нагрузка возвращается в норму, индикаторы CPU опустели:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — нормальная нагрузка после stress" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp2/4.png" alt="Шаг 4 — нормальная нагрузка после stress" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -330,13 +324,13 @@ border-bottom-color = #5294e2</code></pre>
         <div class="experiment__body">
           <p><strong>Задача:</strong> найти все процессы конкретного приложения с помощью фильтра.</p>
           <p><strong>Шаг 1.</strong> Нажимаем <kbd>F4</kbd> (Filter) — в нижней части htop появляется строка ввода фильтра:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — строка фильтра в htop" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 2.</strong> Вводим «firefox» — в списке остаются только процессы Firefox и его дочерние потоки (Web Content, GPU Process):</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — отфильтрованные процессы Firefox" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 3.</strong> Очищаем фильтр (F4 → Esc). Нажимаем <kbd>F3</kbd> (Search) и вводим «polybar» — первое совпадение подсвечено:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — поиск процесса polybar" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp3/1.png" alt="Шаг 1 — строка фильтра в htop" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Вводим «vbox» — в списке остаются только процессы Firefox и его дочерние потоки (Web Content, GPU Process):</p>
+          <img src="static/img/diagnostic/htop/exp3/2.png" alt="Шаг 2 — отфильтрованные процессы Firefox" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Очищаем фильтр (F4 → Esc). Нажимаем <kbd>F3</kbd> (Search) и вводим «i3» — первое совпадение подсвечено:</p>
+          <img src="static/img/diagnostic/htop/exp3/3.png" alt="Шаг 3 — поиск процесса polybar" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Нажимаем F3 повторно для перехода к следующему совпадению:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — навигация по результатам поиска" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp3/4.png" alt="Шаг 4 — навигация по результатам поиска" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -346,13 +340,13 @@ border-bottom-color = #5294e2</code></pre>
         <div class="experiment__body">
           <p><strong>Задача:</strong> принудительно завершить процесс через интерфейс htop.</p>
           <p><strong>Шаг 1.</strong> В отдельном терминале запускаем фоновый процесс: <code>sleep 9999</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — запуск sleep 9999" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp4/1.png" alt="Шаг 1 — запуск sleep 9999" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> В htop находим процесс sleep через фильтр (F4), выделяем его курсором:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — процесс sleep в htop" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp4/2.png" alt="Шаг 2 — процесс sleep в htop" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Нажимаем <kbd>F9</kbd> (Kill) — открывается список сигналов. Выбираем SIGTERM (15) и подтверждаем:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — выбор сигнала SIGTERM" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp4/3.png" alt="Шаг 3 — выбор сигнала SIGTERM" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Процесс sleep завершён и исчез из списка. В терминале отображается «Terminated»:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — процесс завершён" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp4/4.png" alt="Шаг 4 — процесс завершён" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -362,13 +356,13 @@ border-bottom-color = #5294e2</code></pre>
         <div class="experiment__body">
           <p><strong>Задача:</strong> настроить отображение метрик (meters) в верхней части htop.</p>
           <p><strong>Шаг 1.</strong> Нажимаем <kbd>F2</kbd> (Setup) — открывается меню настроек. Выбираем раздел «Meters»:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — меню настроек htop" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp5/1.png" alt="Шаг 1 — меню настроек htop" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> В левую колонку добавляем индикаторы каждого ядра CPU, Memory, Swap. Меняем стиль CPU на Bar (графический):</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — настройка левой колонки метрик" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp5/2.png" alt="Шаг 2 — настройка левой колонки метрик" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> В правую колонку добавляем: Tasks, Load average, Uptime, Battery:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — настройка правой колонки метрик" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp5/3.png" alt="Шаг 3 — настройка правой колонки метрик" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Выходим из настроек (F10). Верхняя часть htop перестроена — цветные полоски CPU, индикаторы RAM/swap, время работы системы:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — обновлённые метрики htop" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/htop/exp5/4.png" alt="Шаг 4 — обновлённые метрики htop" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
     </div>
@@ -420,7 +414,7 @@ border-bottom-color = #5294e2</code></pre>
             <span class="info-row__value">4.5.2</span>
           </div>
         </div>
-        <img src="img/placeholder.png" alt="скриншот Glances с датой и временем" class="placeholder-img">
+        <img src="static/img/diagnostic/glances/main.png" alt="скриншот Glances с датой и временем" class="placeholder-img">
       </div>
     </div>
 
@@ -461,7 +455,7 @@ border-bottom-color = #5294e2</code></pre>
           <p><strong>Задача:</strong> запустить Glances и изучить основной интерфейс мониторинга в терминале.</p>
           <p><strong>Действия:</strong> установлен Glances: <code>sudo pacman -S glances</code>. Запущен командой <code>glances</code>. Изучены доступные секции интерфейса и горячие клавиши (вызываются по <kbd>h</kbd>).</p>
           <p><strong>Результат:</strong> на одном экране терминала отображается комплексная информация: загрузка CPU по ядрам, использование RAM и swap, список процессов (отсортированных по автоматически определяемому «узкому месту»), дисковый ввод-вывод, сетевой трафик по интерфейсам, температура датчиков. Цветовая индикация работает: зелёные значения — норма, фиолетовые — предупреждение, красные — критические.</p>
-          <img src="img/placeholder.png" alt="скриншот Glances в терминале" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/glances/exp1/1.png" alt="скриншот Glances в терминале" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
       <div class="experiment">
@@ -471,7 +465,7 @@ border-bottom-color = #5294e2</code></pre>
           <p><strong>Задача:</strong> запустить Glances в режиме веб-сервера для удалённого мониторинга через браузер.</p>
           <p><strong>Действия:</strong> установлен дополнительный модуль: <code>pip install glances[web]</code>. Запущен веб-режим: <code>glances -w</code>. В браузере открыт адрес <code>http://localhost:61208</code>.</p>
           <p><strong>Результат:</strong> в браузере отобразился полноценный дашборд мониторинга с теми же данными, что и в терминальной версии. Веб-интерфейс обновляется автоматически каждые несколько секунд. Интерфейс адаптивный — корректно отображается на мобильных устройствах. Доступ по сети: с другого компьютера по адресу <code>http://192.168.1.100:61208</code> дашборд также доступен.</p>
-          <img src="img/placeholder.png" alt="скриншот веб-интерфейса Glances" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/glances/exp2/2.png" alt="скриншот веб-интерфейса Glances" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
       <div class="experiment">
@@ -481,7 +475,7 @@ border-bottom-color = #5294e2</code></pre>
           <p><strong>Задача:</strong> отследить нагрузку на дисковую подсистему при копировании большого файла.</p>
           <p><strong>Действия:</strong> запущен Glances. В отдельном терминале запущено копирование большого файла: <code>dd if=/dev/zero of=~/testfile bs=1M count=1024</code> (создание файла размером 1 ГБ). В Glances нажата клавиша <kbd>d</kbd> для включения секции Disk I/O.</p>
           <p><strong>Результат:</strong> в секции «DISK I/O» отобразился резкий рост скорости записи на устройство <code>sda</code>: ~350 МБ/с при записи. Значение подсвечено фиолетовым (предупреждение о высокой нагрузке). После завершения dd скорость записи вернулась к нулю. Чтение оставалось минимальным на протяжении всего эксперимента. Glances также показал процесс <code>dd</code> в топе по дисковому вводу-выводу.</p>
-          <img src="img/placeholder.png" alt="скриншот мониторинга диска в Glances" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/diagnostic/glances/exp3/3.png" alt="скриншот мониторинга диска в Glances" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
       <div class="experiment">
@@ -491,6 +485,7 @@ border-bottom-color = #5294e2</code></pre>
           <p><strong>Задача:</strong> отследить сетевой трафик при загрузке файла из интернета.</p>
           <p><strong>Действия:</strong> в Glances нажата клавиша <kbd>n</kbd> для отображения секции Network. В отдельном терминале запущена загрузка: <code>curl -O https://releases.ubuntu.com/22.04/ubuntu-22.04-desktop-amd64.iso</code>.</p>
           <p><strong>Результат:</strong> в секции «NETWORK» для интерфейса <code>wlan0</code> отобразился входящий трафик ~12 МБ/с (Rx), исходящий — минимальный (Tx). Значения обновляются в реальном времени. При паузе загрузки трафик падает до нуля, при возобновлении — снова растёт. Glances корректно различает трафик по разным сетевым интерфейсам (wlan0, lo).</p>
+          <img src="static/img/diagnostic/glances/exp4/1.png" alt="скриншот мониторинга сети в Glances" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
       <div class="experiment">
@@ -500,6 +495,7 @@ border-bottom-color = #5294e2</code></pre>
           <p><strong>Задача:</strong> сохранить данные мониторинга в CSV-файл для последующего анализа.</p>
           <p><strong>Действия:</strong> Glances запущен с параметром экспорта: <code>glances --export csv --export-csv-file /tmp/glances_report.csv</code>. Программа работала в течение 5 минут, собирая данные каждые 3 секунды.</p>
           <p><strong>Результат:</strong> после остановки Glances (Ctrl+C) создан файл <code>/tmp/glances_report.csv</code> размером около 800 КБ. Файл содержит столбцы: timestamp, cpu_percent, mem_percent, swap_percent, disk_read, disk_write, net_rx, net_tx и другие метрики. Данные можно импортировать в Excel или обработать скриптом на Python для построения графиков нагрузки за период наблюдения.</p>
+          <img src="static/img/diagnostic/glances/exp5/1.png" alt="скриншот экспорта данных Glances в CSV" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
     </div>
@@ -542,6 +538,23 @@ border-bottom-color = #5294e2</code></pre>
       <p>Для повседневного использования рекомендуется связка polybar (для постоянного отображения базовых метрик) + htop (для диагностики проблем с процессами). Glances целесообразно использовать для глубокого анализа нагрузки на систему, а также для удалённого мониторинга серверов благодаря встроенному веб-серверу.</p>
     </div>
   </section>
+
+  <section id="presentation" class="section">
+    <h2 class="section__title">Презентация раздела</h2>
+    <p class="section__desc">Краткая презентация по средствам диагностики, контроля и мониторинга системы. Используйте кнопки для переключения слайдов или скачайте PDF-версию.</p>
+
+    <div class="slider" data-slides="18" data-path="static/img/diagnostic/presentation/">
+      <div class="slider__viewport">
+        <img class="slider__img" src="static/img/diagnostic/presentation/slide01.png" alt="Слайд 1">
+      </div>
+      <div class="slider__controls">
+        <button class="slider__btn slider__btn--prev" aria-label="Предыдущий слайд">‹</button>
+        <span class="slider__counter">1 / 18</span>
+        <button class="slider__btn slider__btn--next" aria-label="Следующий слайд">›</button>
+      </div>
+      <a href="static/presentation.pdf" download class="slider__download">Скачать презентацию (PDF)</a>
+    </div>
+  </section>
   </div>
   </div>
 </main>
@@ -567,6 +580,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { rootMargin: "-20% 0px -60% 0px" });
   sections.forEach(function (s) { observer.observe(s.el); });
+
+  var slider = document.querySelector(".slider");
+  if (slider) {
+    var total = parseInt(slider.dataset.slides, 10);
+    var path = slider.dataset.path;
+    var img = slider.querySelector(".slider__img");
+    var counter = slider.querySelector(".slider__counter");
+    var prev = slider.querySelector(".slider__btn--prev");
+    var next = slider.querySelector(".slider__btn--next");
+    var idx = 1;
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+    function update() {
+      img.src = path + "slide" + pad(idx) + ".png";
+      img.alt = "Слайд " + idx;
+      counter.textContent = idx + " / " + total;
+    }
+    prev.addEventListener("click", function () { idx = idx > 1 ? idx - 1 : total; update(); });
+    next.addEventListener("click", function () { idx = idx < total ? idx + 1 : 1; update(); });
+    document.addEventListener("keydown", function (e) {
+      var rect = slider.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      if (e.key === "ArrowLeft") { idx = idx > 1 ? idx - 1 : total; update(); }
+      if (e.key === "ArrowRight") { idx = idx < total ? idx + 1 : 1; update(); }
+    });
+  }
 });
 </script>
 </body>

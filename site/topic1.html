@@ -43,7 +43,7 @@
 
   <div class="page-with-sidenav">
   <nav class="local-nav local-nav--side">
-    <a href="#i3lock" class="active">i3lock-color</a>
+    <a href="#i3lock" class="active">i3lock</a>
     <a href="#gufw">Gufw</a>
     <a href="#clamtk">ClamTk</a>
     <a href="#conclusion">Вывод</a>
@@ -51,18 +51,18 @@
 
   <div class="page-content">
   <section id="i3lock" class="section">
-    <h2 class="section__title">i3lock-color</h2>
+    <h2 class="section__title">i3lock</h2>
     <p class="section__desc">Экран блокировки для i3wm с расширенными возможностями кастомизации. Форк оригинального i3lock с поддержкой цветов, индикаторов и богатой визуальной настройки.</p>
 
     <div class="content-block">
-      <img src="img/placeholder.png" alt="скриншот i3lock-color с датой и временем" class="placeholder-img">
+      <img src="static/img/defense_information/i3lock-color/main.png" alt="скриншот i3lock с датой и временем" class="placeholder-img">
       <div class="info-row">
         <span class="info-row__label">Производитель</span>
         <span class="info-row__value">Raymond Li (Raymo111), сообщество</span>
       </div>
       <div class="info-row">
         <span class="info-row__label">Сайт</span>
-        <span class="info-row__value"><a href="https://github.com/Raymo111/i3lock-color" target="_blank">github.com/Raymo111/i3lock-color</a></span>
+        <span class="info-row__value"><a href="https://github.com/Raymo111/i3lock" target="_blank">github.com/Raymo111/i3lock</a></span>
       </div>
       <div class="info-row">
         <span class="info-row__label">Лицензия</span>
@@ -72,7 +72,7 @@
 
     <div class="content-block">
       <h3>Возможности</h3>
-      <p>i3lock-color — расширенная версия стандартного экрана блокировки i3lock, позиционирующая себя как «самый популярный нестандартный экран блокировки в мире». Программа предоставляет полноэкранную блокировку сеанса с индикатором ввода пароля в виде кольцевого виджета.</p>
+      <p>i3lock — расширенная версия стандартного экрана блокировки i3lock, позиционирующая себя как «самый популярный нестандартный экран блокировки в мире». Программа предоставляет полноэкранную блокировку сеанса с индикатором ввода пароля в виде кольцевого виджета.</p>
       <ul>
         <li>Полная настройка цветов всех элементов интерфейса: фон, кольцо индикатора, текст, разделители</li>
         <li>Отображение даты и времени на экране блокировки</li>
@@ -86,7 +86,7 @@
 
     <div class="content-block">
       <h3>Особенности</h3>
-      <p>В отличие от стандартного i3lock, версия i3lock-color предлагает десятки параметров командной строки для тонкой настройки внешнего вида. Конфигурация выполняется через аргументы запуска или shell-скрипт, что позволяет легко менять тему оформления.</p>
+      <p>В отличие от стандартного i3lock, версия i3lock предлагает десятки параметров командной строки для тонкой настройки внешнего вида. Конфигурация выполняется через аргументы запуска или shell-скрипт, что позволяет легко менять тему оформления.</p>
       <p>Программа не имеет графического интерфейса настройки — всё управление осуществляется через терминал, что соответствует философии i3wm. Поддерживается интеграция с <code>xautolock</code> и <code>xss-lock</code> для автоматической блокировки по таймеру или при закрытии крышки ноутбука.</p>
     </div>
 
@@ -97,16 +97,16 @@
         <div class="experiment__num">Эксперимент 1</div>
         <div class="experiment__title">Базовая блокировка экрана</div>
         <div class="experiment__body">
-          <p><strong>Задача:</strong> проверить работу базовой блокировки экрана с помощью i3lock-color.</p>
+          <p><strong>Задача:</strong> проверить работу базовой блокировки экрана с помощью i3lock.</p>
           <p><strong>Шаг 1.</strong> Открываем терминал и выполняем команду блокировки с чёрным фоном:</p>
-          <pre><code>i3lock-color -c 000000</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — ввод команды в терминале" class="placeholder-img placeholder-img--sm">
+          <pre><code>i3lock -c 000000</code></pre>
+          <img src="static/img/defense_information/i3lock-color/exp1/1.png" alt="Шаг 1 — ввод команды в терминале" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Экран заблокирован — отображается чёрный фон. Ввод с клавиатуры и мыши перехватывается i3lock. При нажатии клавиш появляется кольцевой индикатор:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — экран блокировки с индикатором" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp1/2.png" alt="Шаг 2 — экран блокировки с индикатором" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Вводим неверный пароль — индикатор окрашивается в красный цвет и отображается сообщение об ошибке:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — неверный пароль" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp1/3.png" alt="Шаг 3 — неверный пароль" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Вводим верный пароль — экран разблокируется и возвращается рабочий стол:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — успешная разблокировка" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp1/4.png" alt="Шаг 4 — успешная разблокировка" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -116,23 +116,23 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> изменить цветовую схему кольцевого индикатора ввода пароля.</p>
           <p><strong>Шаг 1.</strong> Выполняем команду с параметрами цветов в терминале:</p>
-          <pre><code>i3lock-color \
-  --insidecolor=00000000 \
-  --ringcolor=5294e2ff \
-  --keyhlcolor=88c0d0ff \
-  --bshlcolor=bf616aff \
-  --insidevercolor=5e81acaa \
-  --ringvercolor=81a1c1ff \
-  --insidewrongcolor=bf616aaa \
-  --ringwrongcolor=d08770ff \
+          <pre><code>i3lock \
+  --inside-color=00000000 \
+  --ring-color=5294e2ff \
+  --keyhl-color=88c0d0ff \
+  --bshl-color=bf616aff \
+  --insidever-color=5e81acaa \
+  --ringver-color=81a1c1ff \
+  --insidewrong-color=bf616aaa \
+  --ringwrong-color=d08770ff \
   -c 2e3440</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — ввод команды с параметрами цветов" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp2/1.png" alt="Шаг 1 — ввод команды с параметрами цветов" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Экран заблокирован. Кольцо индикатора отображается синим цветом (#5294e2) в состоянии ожидания:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — синее кольцо в ожидании" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp2/2.png" alt="Шаг 2 — синее кольцо в ожидании" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> При вводе символов пароля кольцо подсвечивается голубым (#88c0d0), при удалении — красным (#bf616a):</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — подсветка при вводе пароля" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp2/3.png" alt="Шаг 3 — подсветка при вводе пароля" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> При проверке пароля кольцо меняется на тёмно-синий, при ошибке — на оранжево-красный:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — кольцо при проверке и ошибке" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp2/4.png" alt="Шаг 4 — кольцо при проверке и ошибке" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -142,14 +142,14 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> проверить функцию размытия (blur) текущего содержимого экрана.</p>
           <p><strong>Шаг 1.</strong> На рабочем столе открыты несколько окон с текстом и браузером (для наглядности):</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — рабочий стол до блокировки" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp3/1.png" alt="Шаг 1 — рабочий стол до блокировки" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Выполняем команду блокировки с размытием:</p>
-          <pre><code>i3lock-color --blur 5 --clock --indicator</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 2 — ввод команды blur" class="placeholder-img placeholder-img--sm">
+          <pre><code>i3lock --blur 5 --clock --indicator</code></pre>
+          <img src="static/img/defense_information/i3lock-color/exp3/2.png" alt="Шаг 2 — ввод команды blur" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Экран заблокирован — содержимое размыто до неузнаваемости, текст не читается, но общая цветовая гамма сохраняется. Часы и индикатор отображаются поверх размытого фона:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — размытый экран блокировки с часами" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp3/3.png" alt="Шаг 3 — размытый экран блокировки с часами" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> После ввода верного пароля экран разблокируется, все окна на месте:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — рабочий стол после разблокировки" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp3/4.png" alt="Шаг 4 — рабочий стол после разблокировки" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -159,20 +159,20 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> настроить вывод текущей даты и времени на экране блокировки.</p>
           <p><strong>Шаг 1.</strong> Выполняем команду с параметрами отображения часов:</p>
-          <pre><code>i3lock-color --clock \
-  --timestr="%H:%M:%S" \
-  --datestr="%A, %d %B %Y" \
-  --timecolor=ffffffff \
-  --datecolor=ffffffaa \
-  --timesize=48 \
-  --datesize=20 \
+          <pre><code>i3lock --clock \
+  --time-str="%H:%M:%S" \
+  --date-str="%A, %d %B %Y" \
+  --time-color=ffffffff \
+  --date-color=ffffffaa \
+  --times-ize=48 \
+  --date-size=20 \
   --indicator \
   -c 2e3440</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — ввод команды с параметрами часов" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp4/1.png" alt="Шаг 1 — ввод команды с параметрами часов" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Экран заблокирован. Отображается время в формате ЧЧ:ММ:СС крупным шрифтом (48pt) и дата ниже мелким (20pt):</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — экран блокировки с часами и датой" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp4/2.png" alt="Шаг 2 — экран блокировки с часами и датой" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Время обновляется в реальном времени. Кольцевой индикатор появляется при начале ввода пароля, часы и дата остаются видимыми:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — часы и индикатор при вводе пароля" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp4/3.png" alt="Шаг 3 — часы и индикатор при вводе пароля" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -182,22 +182,21 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> настроить автоблокировку экрана при бездействии пользователя через xss-lock.</p>
           <p><strong>Шаг 1.</strong> Открываем конфигурацию i3 (<code>~/.config/i3/config</code>) и добавляем строку автозапуска xss-lock:</p>
-          <pre><code>exec --no-startup-id xss-lock -- i3lock-color --blur 5 --clock --indicator</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — редактирование конфигурации i3" class="placeholder-img placeholder-img--sm">
+          <pre><code>exec --no-startup-id xss-lock -- i3lock --blur 5 --clock --indicator</code></pre>
+          <img src="static/img/defense_information/i3lock-color/exp5/1.png" alt="Шаг 1 — редактирование конфигурации i3" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Настраиваем таймер DPMS для выключения монитора через 5 минут бездействия:</p>
           <pre><code>xset dpms 300 600 900</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 2 — настройка DPMS в терминале" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 3.</strong> Перезагружаем конфигурацию i3 комбинацией <kbd>$mod+Shift+R</kbd>. Ожидаем 5 минут без активности:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — перезагрузка конфигурации i3" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp5/2.png" alt="Шаг 2 — настройка DPMS в терминале" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 3.</strong> Перезагружаем конфигурацию i3 комбинацией <kbd>$mod+Shift+R</kbd>. Ожидаем 5 минут без активности.</p>
           <p><strong>Шаг 4.</strong> Экран автоматически заблокирован с размытием и часами — xss-lock сработал по таймеру DPMS:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — автоматическая блокировка экрана" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/i3lock-color/exp5/4.png" alt="Шаг 4 — автоматическая блокировка экрана" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
     </div>
 
     <div class="content-block">
       <h3>Вывод</h3>
-      <p>i3lock-color — отличное решение для блокировки экрана в тайловых оконных менеджерах. Программа сочетает безопасность с возможностью полной визуальной кастомизации, что делает её стандартом де-факто среди пользователей i3wm.</p>
+      <p>i3lock — отличное решение для блокировки экрана в тайловых оконных менеджерах. Программа сочетает безопасность с возможностью полной визуальной кастомизации, что делает её стандартом де-факто среди пользователей i3wm.</p>
       <div class="pros-cons">
         <div class="pros-cons__col pros-cons__col--plus">
           <h4>Плюсы</h4>
@@ -241,7 +240,7 @@
             <span class="info-row__value">GPL-3.0</span>
           </div>
         </div>
-        <img src="img/placeholder.png" alt="скриншот Gufw с датой и временем" class="placeholder-img">
+        <img src="static/img/defense_information/gufw/main.png" alt="скриншот Gufw с датой и временем" class="placeholder-img">
       </div>
     </div>
 
@@ -269,13 +268,12 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> активировать межсетевой экран и задать базовую политику фильтрации трафика.</p>
           <p><strong>Шаг 1.</strong> Запускаем Gufw из терминала командой <code>sudo gufw</code>. Вводим пароль суперпользователя:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — запуск Gufw и ввод пароля" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp1/1.png" alt="Шаг 1 — запуск Gufw и ввод пароля" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> В главном окне Gufw переводим переключатель «Статус» в положение «Включён»:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — включение файрвола" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp1/2.png" alt="Шаг 2 — включение файрвола" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Устанавливаем политику по умолчанию: входящие — «Запретить» (Deny), исходящие — «Разрешить» (Allow):</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — настройка политики" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Проверяем статус файрвола в терминале командой <code>sudo ufw status</code> — отображается «Status: active»:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — проверка статуса в терминале" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp1/4.png" alt="Шаг 4 — проверка статуса в терминале" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -285,13 +283,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> создать правило для разрешения входящих подключений по протоколу SSH (порт 22).</p>
           <p><strong>Шаг 1.</strong> В окне Gufw нажимаем кнопку «+» (добавить правило) в нижней части списка правил:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — кнопка добавления правила" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp2/1.png" alt="Шаг 1 — кнопка добавления правила" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> На вкладке «Простые» выбираем: политика — «Разрешить», направление — «Входящий», протокол — «TCP», порт — «22». Нажимаем «Добавить»:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — заполнение формы правила SSH" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp2/2.png" alt="Шаг 2 — заполнение формы правила SSH" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> В списке правил появилась запись «22/tcp ALLOW IN Anywhere»:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — правило SSH в списке" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 4.</strong> Проверяем подключение с другой машины: <code>ssh user@192.168.1.100</code> — соединение установлено успешно:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — успешное SSH-подключение" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp2/3.png" alt="Шаг 3 — правило SSH в списке" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 4.</strong> Проверяем подключение с другой машины: <code>ssh user@localhost</code> — соединение установлено успешно:</p>
+          <img src="static/img/defense_information/gufw/exp2/4.png" alt="Шаг 4 — успешное SSH-подключение" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -301,13 +299,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> заблокировать входящие подключения на порт 8080.</p>
           <p><strong>Шаг 1.</strong> Запускаем тестовый HTTP-сервер на порту 8080: <code>python -m http.server 8080</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — запуск тестового сервера" class="placeholder-img placeholder-img--sm">
-          <p><strong>Шаг 2.</strong> Проверяем доступ с другого устройства — страница открывается по адресу <code>http://192.168.1.100:8080</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — доступ до блокировки" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp3/1.png" alt="Шаг 1 — запуск тестового сервера" class="placeholder-img placeholder-img--sm">
+          <p><strong>Шаг 2.</strong> Проверяем доступ с другого устройства — страница открывается по адресу <code>http://192.168.56.101:8080</code>:</p>
+          <img src="static/img/defense_information/gufw/exp3/2.png" alt="Шаг 2 — доступ до блокировки" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> В Gufw добавляем правило: политика — «Запретить», направление — «Входящий», протокол — «TCP», порт — «8080»:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — создание правила блокировки" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp3/3.png" alt="Шаг 3 — создание правила блокировки" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Повторяем попытку доступа с другого устройства — соединение отклонено, страница не загружается:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — соединение заблокировано" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp3/4.png" alt="Шаг 4 — соединение заблокировано" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -317,13 +315,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> разрешить SSH-доступ только с определённого IP-адреса.</p>
           <p><strong>Шаг 1.</strong> Удаляем предыдущее общее правило для SSH (порт 22), выделив его и нажав кнопку «−»:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — удаление старого правила" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp4/1.png" alt="Шаг 1 — удаление старого правила" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Нажимаем «+» и переходим на вкладку «Расширенные». Заполняем: политика — «Разрешить», направление — «Входящий», протокол — «TCP», IP источника — «192.168.1.50», порт — «22»:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — расширенное правило с IP" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp4/2.png" alt="Шаг 2 — расширенное правило с IP" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Проверяем SSH с доверенного IP (192.168.1.50) — подключение успешно:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — успешное подключение с доверенного IP" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp4/3.png" alt="Шаг 3 — успешное подключение с доверенного IP" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Проверяем SSH с другого IP (192.168.1.60) — соединение отклонено «Connection refused»:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — отказ подключения с другого IP" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp4/4.png" alt="Шаг 4 — отказ подключения с другого IP" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -333,13 +331,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> проверить работу предустановленных профилей Gufw.</p>
           <p><strong>Шаг 1.</strong> В выпадающем списке «Профиль» выбираем «Дом» (Home). Добавляем разрешения для SSH и Samba:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — профиль Дом с правилами" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp5/1.png" alt="Шаг 1 — профиль Дом с правилами" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Переключаемся на профиль «Офис» (Office) — набор правил автоматически меняется:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — профиль Офис" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp5/2.png" alt="Шаг 2 — профиль Офис" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Переключаемся на «Публичная сеть» (Public) — устанавливаем максимально строгую политику: входящие — «Отклонить»:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — профиль Публичная сеть" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp5/3.png" alt="Шаг 3 — профиль Публичная сеть" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Возвращаемся на профиль «Дом» — все ранее добавленные правила SSH и Samba сохранены:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — возврат к профилю Дом" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/gufw/exp5/4.png" alt="Шаг 4 — возврат к профилю Дом" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
     </div>
@@ -374,7 +372,7 @@
     <p class="section__desc">Графическая оболочка для антивирусного движка ClamAV — одного из немногих антивирусных решений с открытым исходным кодом для Linux.</p>
 
     <div class="content-block">
-      <img src="img/placeholder.png" alt="скриншот ClamTk с датой и временем" class="placeholder-img">
+      <img src="static/img/defense_information/clamtk/main.png" alt="скриншот ClamTk с датой и временем" class="placeholder-img">
       <div class="info-row">
         <span class="info-row__label">Производитель</span>
         <span class="info-row__value">Dave Mauroni</span>
@@ -422,13 +420,12 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> обновить антивирусные базы ClamAV через графический интерфейс ClamTk.</p>
           <p><strong>Шаг 1.</strong> Запускаем ClamTk из меню приложений или командой <code>clamtk</code>. Открывается главное окно программы:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — главное окно ClamTk" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp1/1.png" alt="Шаг 1 — главное окно ClamTk" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> В разделе «Обновления» нажимаем кнопку «Обновить сигнатуры». Начинается загрузка баз с серверов ClamAV:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — процесс обновления баз" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Обновление завершено. Отображается версия баз (daily.cld), дата обновления и общее количество сигнатур (более 8,6 млн):</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — информация об обновлённых базах" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp1/3.png" alt="Шаг 3 — информация об обновлённых базах" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Проверяем в терминале командой <code>sudo freshclam</code> — базы актуальны:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — проверка freshclam в терминале" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp1/4.png" alt="Шаг 4 — проверка freshclam в терминале" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -439,13 +436,12 @@
           <p><strong>Задача:</strong> проверить способность ClamTk обнаруживать вредоносные файлы с помощью стандартного тестового файла EICAR.</p>
           <p><strong>Шаг 1.</strong> Загружаем тестовый файл EICAR в терминале (безвредный тестовый файл для проверки антивирусов):</p>
           <pre><code>curl -o ~/eicar.com.txt https://secure.eicar.org/eicar.com.txt</code></pre>
-          <img src="img/placeholder.png" alt="Шаг 1 — загрузка EICAR файла" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp2/1.png" alt="Шаг 1 — загрузка EICAR файла" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> В ClamTk выбираем «Сканировать файл» и указываем скачанный <code>~/eicar.com.txt</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — выбор файла для сканирования" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp2/2.png" alt="Шаг 2 — выбор файла для сканирования" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> ClamTk обнаружил угрозу — отображается предупреждение «Eicar-Signature FOUND»:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — обнаружена угроза EICAR" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp2/3.png" alt="Шаг 3 — обнаружена угроза EICAR" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Файл помечен как вредоносный. Предлагается переместить в карантин или удалить:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — действия с обнаруженной угрозой" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -455,13 +451,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> выполнить полное сканирование домашней директории пользователя.</p>
           <p><strong>Шаг 1.</strong> В ClamTk выбираем «Сканировать директорию» и указываем папку <code>/home/user</code>:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — выбор директории для сканирования" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp3/1.png" alt="Шаг 1 — выбор директории для сканирования" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Сканирование запущено — отображается прогресс-бар и количество проверенных файлов:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — процесс сканирования" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp3/2.png" alt="Шаг 2 — процесс сканирования" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Сканирование завершено за 12 минут. Проверено 14 328 файлов, обнаружена 1 угроза (EICAR-файл):</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — результаты сканирования" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp3/3.png" alt="Шаг 3 — результаты сканирования" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> В окне результатов отображается путь к заражённому файлу, тип угрозы и кнопки действий:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — детали найденной угрозы" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp3/4.png" alt="Шаг 4 — детали найденной угрозы" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -471,13 +467,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> переместить обнаруженный вредоносный файл в карантин ClamTk.</p>
           <p><strong>Шаг 1.</strong> В списке обнаруженных угроз выделяем файл <code>eicar.com.txt</code> и нажимаем кнопку «Карантин»:</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — выбор файла для карантина" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp4/1.png" alt="Шаг 1 — выбор файла для карантина" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Файл перемещён в директорию <code>~/.clamtk/viruses/</code>. Исходный файл удалён из домашней папки:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — файл перемещён в карантин" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp4/2.png" alt="Шаг 2 — файл перемещён в карантин" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Открываем раздел «Карантин» в ClamTk — файл отображается с возможностью восстановления или удаления:</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — раздел карантина ClamTk" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp4/3.png" alt="Шаг 3 — раздел карантина ClamTk" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Повторное сканирование домашней директории — угроз не обнаружено:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — чистое повторное сканирование" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp4/4.png" alt="Шаг 4 — чистое повторное сканирование" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
 
@@ -487,13 +483,13 @@
         <div class="experiment__body">
           <p><strong>Задача:</strong> настроить автоматическое сканирование домашней директории по расписанию.</p>
           <p><strong>Шаг 1.</strong> В ClamTk открываем раздел «Планировщик» (Scheduler):</p>
-          <img src="img/placeholder.png" alt="Шаг 1 — раздел планировщика" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp5/1.png" alt="Шаг 1 — раздел планировщика" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 2.</strong> Устанавливаем время автоматического обновления баз — 13:00 ежедневно:</p>
-          <img src="img/placeholder.png" alt="Шаг 2 — расписание обновления баз" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp5/2.png" alt="Шаг 2 — расписание обновления баз" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 3.</strong> Устанавливаем время сканирования — 14:00 ежедневно (через час после обновления баз):</p>
-          <img src="img/placeholder.png" alt="Шаг 3 — расписание сканирования" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp5/3.png" alt="Шаг 3 — расписание сканирования" class="placeholder-img placeholder-img--sm">
           <p><strong>Шаг 4.</strong> Проверяем созданные задания в терминале командой <code>crontab -l</code> — видим две записи для freshclam и clamscan:</p>
-          <img src="img/placeholder.png" alt="Шаг 4 — crontab с заданиями ClamTk" class="placeholder-img placeholder-img--sm">
+          <img src="static/img/defense_information/clamtk/exp5/4.png" alt="Шаг 4 — crontab с заданиями ClamTk" class="placeholder-img placeholder-img--sm">
         </div>
       </div>
     </div>
@@ -528,7 +524,7 @@
       <h3>Общий вывод по разделу</h3>
       <p>Рассмотренные три программы покрывают основные аспекты защиты информации от несанкционированного доступа в Arch Linux:</p>
       <ul>
-        <li><strong>i3lock-color</strong> защищает от физического доступа к компьютеру, блокируя экран с требованием пароля;</li>
+        <li><strong>i3lock</strong> защищает от физического доступа к компьютеру, блокируя экран с требованием пароля;</li>
         <li><strong>Gufw</strong> обеспечивает сетевую безопасность, фильтруя входящий и исходящий трафик по заданным правилам;</li>
         <li><strong>ClamTk</strong> предоставляет антивирусную защиту, позволяя обнаруживать вредоносное ПО в файлах.</li>
       </ul>
