@@ -1,0 +1,8 @@
+services:
+  kr-os:
+    build: .
+    image: kr-os:latest
+    container_name: kr-os
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8088:80"
